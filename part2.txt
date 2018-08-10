@@ -1,0 +1,50 @@
+Part 2.1
+             many       1     many                            many
+      +---------+       +-----+         +-------------+       +--------+
+      |Issue    +-------+Comic+---------+Comic_artist +-------+Artist  |
+      |comic_id |       |     |         |comic_id     |       |        |
+      +---------+       +--+--+         |artist_id    |       +--------+
+                     many  |            +-------------+
+                           |
+                           |                    many
+                       +---+----------+          +---------+
+                       | Comic_writer |          |Writer   |
+                       | comic_id     +----------+         |
+                       | writer_id    |          +---------+
+                       +--------------+
+
+ 2.2
+                many                          many         many         1
+     +-----------+      +----------------+      +-----------+          +-----------+
+     |Instrument +------+ Song_instrument+------+ Song      +----------+ Setlist   |
+     +-----------+      | instrument_id  |      | setlist_id|          |           |
+                        | song_id        |      |           |          +----+------+  many
+                        +----------------+      +-----------+               |
+                                                                            |
+                                                +----------+            +---+------------+
+                                                | Tourdate |            |Setlist_tourdate|
+                                                |          +------------+setlist_id      |
+                                                |          |            |tourdate_id     |
+                                                +----------+            |                |
+                                                        many            +----------------+
+
+ 2.3
+               1         many      many      1          many       1
+        +-------+       +------------+       +------------+       +---------+
+        |Artist +-------+ Artwork    +-------+ Exhibit    +-------+Gallery  |
+        +-------+       | artist_id  |       | gallery_id |       |         |
+                        | exhibit_id | +-----+            |       +---------+
+                        +------------+ |     +------------+many
+                                       |     +-----------------+   many+---------+
+                                       +-----+ Exhibit_curators|       |Curators |
+                                             | curators_id     +-------+         |
+                                             | exhibit_id      |       +---------+
+                                             +-----------------+
+
+
+  2.4
+                  1       many           1          many
+       +------------+      +--------------+          +-------------+
+       | Music_piece+------+ Sheet_music  +----------+Instrument   |
+       |            |      | musicpiece_id|          |sheetmusic_id|
+       +------------+      +--------------+          +-------------+

@@ -1,0 +1,32 @@
+3.1
+
+       +-----+        +-------+            +---------------+        +------+
+       |User +--------+Order  +------------+Dishesfororder +--------+Dishes|
+       |     |        |user_id|            |order_id       |        |      |
+       +-----+        +-------+            |dishes_id      |        +------+
+            1         many      many       +---------------+       many
+
+
+3.2
+      many                    many         many                            many
++------+        +--------------+   +----------+         +------------+         +-------+
+| Crew +--------+Flightnumcrew +---+Flightnum +---------+Flightdate  +---------+ Date  |
++------+        |crew_id       |   |          |         |flightnum_id|         |       |
+               |flightnum_id  |   +----+-----+         |date_id     |         +-------+
+               |              |        |   many        +------------+
+               +--------------+        |
+                                       |
+                                       |                     many
+                               +-------+-----------+          +-----------+
+                               |Flightnumpassenger +----------+ Passenger |
+                               |flightnum_id       |          |           |
+                               |passenger_id       |          +-----------+
+                               +-------------------+
+
+
+ 3.3
+       +-----------+          +------+          +------------+           +--------+
+       | Tracks    +----------+Artist+----------+Subscribe   +-----------+Listener|
+       | artist_id |          +------+          |artist_id   |           +--------+
+       +-----------+          1      many       |listener_id |         many
+                many                            +------------+
